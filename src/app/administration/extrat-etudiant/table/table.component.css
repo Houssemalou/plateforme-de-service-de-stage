@@ -1,0 +1,7 @@
+mat-card{
+    margin: 2%;
+}
+.action-btn{
+    display: flex;
+    gap: 5px;
+}

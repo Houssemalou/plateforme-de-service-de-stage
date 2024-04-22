@@ -1,0 +1,65 @@
+<div class="container">
+  <div class="row">
+    <!-- Image -->
+    <div class="col-lg-6">
+      <img src="https://via.placeholder.com/600x400" class="img-fluid" alt="Placeholder Image">
+    </div>
+    
+    <!-- Formulaire -->
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="card-title"><i class='bx bx-plus'></i> Ajouter une offre de stage</h5>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="offreStageForm" (ngSubmit)="onSubmit()">
+            <!-- Titre du stage -->
+            <div class="mb-3">
+              <label for="titre" class="form-label"><i class='bx bx-book'></i> Titre du stage</label>
+              <input type="text" class="form-control" id="titre" formControlName="titre" placeholder="Entrez le titre du stage">
+            </div>
+            
+            <!-- Nom de la société -->
+            <div class="mb-3">
+              <label for="entreprise" class="form-label"><i class='bx bx-building'></i> Nom de la société</label>
+              <input type="text" class="form-control" id="entreprise" formControlName="entreprise" placeholder="Entrez le nom de la société">
+            </div>
+
+            <!-- Description du stage -->
+            <div class="mb-3">
+              <label for="description" class="form-label"><i class='bx bx-info-circle'></i> Description du stage</label>
+              <textarea class="form-control" id="description" rows="5" formControlName="description" placeholder="Décrivez le contenu du stage"></textarea>
+            </div>
+
+            <!-- Durée du stage -->
+            <div class="mb-3">
+              <label for="duree" class="form-label"><i class='bx bx-time'></i> Durée du stage</label>
+              <input type="text" class="form-control" id="duree" formControlName="duree" placeholder="Entrez la durée du stage">
+            </div>
+
+            <!-- Lieu du stage -->
+            <div class="mb-3">
+              <label for="location" class="form-label"><i class='bx bx-map'></i> Lieu du stage</label>
+              <input type="text" class="form-control" id="location" formControlName="location" placeholder="Entrez le lieu du stage">
+            </div>
+
+            <!-- Contact -->
+            <div class="mb-3">
+              <label for="contact" class="form-label"><i class='bx bx-envelope'></i> Contact</label>
+              <input type="text" class="form-control" id="contact" formControlName="contact" placeholder="Entrez le contact pour l'offre">
+            </div>
+
+            <!-- Nombre de stagiaires -->
+            <div class="mb-3">
+              <label for="nb_stagiaire" class="form-label"><i class='bx bx-group'></i> Nombre de stagiaires</label>
+              <input type="text" class="form-control" id="nb_stagiaire" formControlName="nb_stagiaire" placeholder="Entrez le nombre de stagiaires recherchés">
+            </div>
+
+            <!-- Bouton d'ajout -->
+            <button type="submit" class="btn btn-primary"><i class='bx bx-plus'></i> Ajouter l'offre</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

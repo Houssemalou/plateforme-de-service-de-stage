@@ -1,0 +1,45 @@
+/* Ajouter le style à votre CSS */
+
+/* Styles pour les cartes */
+.card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .card-text {
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
+  /* Styles pour les icônes */
+  .ai {
+    font-size: 1.2rem;
+    margin-right: 5px;
+  }
+  
+  .ai-blue {
+    color: #007bff; /* Couleur bleue */
+  }
+  
+  /* Styles pour les boutons */
+  .btn-link {
+    font-size: 0.9rem;
+    color: #007bff; /* Couleur bleue */
+    text-decoration: none;
+  }
+  
+  .btn-link:hover {
+    text-decoration: underline;
+  }
+  .bx{
+    color: #007bff;
+  }
+  

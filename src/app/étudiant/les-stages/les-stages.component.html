@@ -1,0 +1,23 @@
+<div class="container">
+  <h2>Dernières Offres de Stage</h2>
+  <div *ngFor="let offre of offres" class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title">{{offre.title}}</h5>
+      <div class="d-flex justify-content-between">
+        <div>
+          <p>{{offre.description | slice:0:50}}<span *ngIf="offre.isExpanded">{{offre.description.slice(50)}}</span></p>
+          <p class="card-text">
+            <i class="bx bx-building bx-blue">{{offre.company}}</i> 
+            <i class="bx bx-map bx-blue"> {{offre.location}}</i>  
+          </p>
+        </div>
+        <div class="d-block">
+          <i class="bx bx-time bx-blue">{{offre.duration}}</i> 
+          <button (click)="offre.isExpanded = !offre.isExpanded" class="btn btn-link">{{offre.isExpanded ? 'Voir Moins' : 'Voir Plus'}}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  

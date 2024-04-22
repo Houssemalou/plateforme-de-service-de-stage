@@ -1,0 +1,75 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-3">
+      <div id="sidebar" class="demo-app-sidebar">
+        <div class="demo-app-sidebar-section">
+          <h2 class="text-black mb-4">Calendar Settings</h2>
+          <div class="form-check form-switch mb-3">
+            <input class="form-check-input" type="checkbox" [checked]="calendarVisible" (change)="handleCalendarToggle()" id="toggleCalendar">
+            <label class="form-check-label" for="toggleCalendar">Show Calendar</label>
+          </div>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" [checked]="calendarOptions().weekends" (change)="handleWeekendsToggle()" id="toggleWeekends">
+            <label class="form-check-label" for="toggleWeekends">Show Weekends</label>
+          </div>
+        </div>
+        
+        <div class="card mt-4">
+          <div class="card-body">
+            <div id="external-events" class="demo-app-sidebar-section mt-2">
+              <h2 class="card-title mb-4">Draggable Events</h2>
+              <div id="Addev" class="list-group">
+                <ng-container *ngFor="let event of ListTitle">
+                <div [class]="'bg-'+ event.color"  class="list-group-item list-group-item-action fc-event" [style.background-color]="event.color">
+                  <div class="fc-event-main">{{event.title}}</div>
+                </div>
+              </ng-container>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card mt-4">
+          <div class="card-body">
+            <h2 class="card-title mb-4 text-center">Add New Event</h2>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" [formControl] = "eventTitle" placeholder="Event Title" aria-label="Event Title" aria-describedby="button-addon2">
+              <button (click)="addevent(colorAdd)" [class]="'btn btn-'+ colorAdd " type="button" id="button-addon2">Add Event</button>
+            </div>
+            <div class="color-picker mb-3">
+              <h6>Choose Event Color:</h6>
+              <div class="color-cubes">
+                <ng-container *ngFor="let color of ListColor">
+                  <div (click)="changeColorAdd(color)" class="color-cube" [class]="'bg-' + color" >
+                    <i class="fas fa-square"></i>
+                  </div>
+                </ng-container>
+              </div>
+            </div>
+          </div>
+        </div>
+                
+        
+        <div class="demo-app-sidebar-section mt-4 d-flex flex-column justify-content-center">
+          <h2 class="text-black mb-4">All Events ({{currentEvents().length}})</h2>
+          <ul class="list-group">
+            <li *ngFor="let event of currentEvents()" class="list-group-item">
+              <b>{{event.startStr}}</b>
+              <i>{{event.title}}</i>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-9 mt-4 gold">
+      <div class="demo-app-main  p-3 rounded">
+        <full-calendar *ngIf="calendarVisible()" [options]="calendarOptions()">
+          <ng-template #eventContent let-arg>
+            <b>{{ arg.timeText }}</b>
+            <i>{{ arg.event.title }}</i>
+          </ng-template>
+        </full-calendar>
+      </div>
+    </div>
+  </div>
+</div>

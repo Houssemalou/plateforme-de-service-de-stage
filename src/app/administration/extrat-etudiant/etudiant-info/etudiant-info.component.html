@@ -1,0 +1,87 @@
+<div *ngIf="inputdata.title !=='modifier les informations' && inputdata.title !=='ajouter un étudient'" class="card" style="width: 18rem;">
+  <div class="card-body">
+      <h5 class="card-title">Confirmation de suppression</h5>
+      <p class="card-text">Êtes-vous sûr de vouloir supprimer {{inputdata.title}} ?</p>
+      <button class="btn btn-danger" (click)="supprimerStudent(inputdata.code)">Supprimer</button>
+      <button class="btn btn-secondary" (click)="closepopup()">Annuler</button>
+  </div>
+</div>
+<div  *ngIf="inputdata.title ==='modifier les informations' || inputdata.title ==='ajouter un étudient'" class="card mb-4">
+  <form [formGroup]="etudiantForm" (ngSubmit)="saveStudent()" class="form-grid w-100">
+    <div class="card-header d-flex justify-content-between p-1">
+      <h5 class="">{{inputdata.title}}</h5>
+      <button type="button" (click)="closepopup()" class="btn-close pb-2" aria-label="Close"></button>
+    </div>
+    <div class="card-body">
+      <div class="mb-3 row">
+        <label for="html5-text-input" class="col-md-2 col-form-label">nom</label>
+        <div class="col-md-10">
+          <input class="form-control" type="text" value="Sneat" id="html5-text-input" formControlName="nom"  [ngClass]="{ 'is-invalid': submitted && f['nom'].errors }" />
+        </div>
+      </div>
+      <div *ngIf="submitted && f['nom'].errors" class="invalid-feedback">
+        <div *ngIf="f['nom'].errors['required']">le nom est obligatoire</div>
+      </div>
+      <div class="mb-3 row">
+        <label for="html5-text-input" class="col-md-2 col-form-label">prenom</label>
+        <div class="col-md-10">
+          <input class="form-control" type="text" value="Sneat" id="html5-text-input" formControlName="prenom"  [ngClass]="{ 'is-invalid': submitted && f['prenom'].errors }" />
+        </div>
+      </div>
+      <div *ngIf="submitted && f['prenom'].errors" class="invalid-feedback">
+        <div *ngIf="f['prenom'].errors['required']">le prenom est obligatoire</div>
+      </div>
+      <div class="mb-3 row" >
+        <label for="html5-email-input" class="col-md-2 col-form-label">email</label>
+        <div class="col-md-10">
+          <input class="form-control" type="email" value="john@example.com" id="html5-email-input" formControlName="email"  [ngClass]="{ 'is-invalid': submitted && f['email'].errors }" />
+        </div>
+      </div>
+      <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+        <div *ngIf="f['email'].errors['required']">Email est obligatoire</div>
+        <div *ngIf="f['email'].errors['email']">Email est invalide</div>
+      </div>
+      <div class="mb-3 row">
+        <label for="html5-tel-input" class="col-md-2 col-form-label">telephone</label>
+        <div class="col-md-10">
+          <input class="form-control" type="tel" id="html5-tel-input" formControlName="tel"  [ngClass]="{ 'is-invalid': submitted && f['tel'].errors }" />
+        </div>
+      </div>
+      <div *ngIf="submitted && f['tel'].errors" class="invalid-feedback">
+        <div *ngIf="f['tel'].errors['required']">le numero de tel est obligatoire</div>
+        <div *ngIf="f['tel'].errors['pattern']">le numero est invalide</div>
+      </div>
+      <div class="mb-3 row">
+        <label for="html5-text-input" class="col-md-2 col-form-label">specialite</label>
+        <div class="col-md-10">
+          <input class="form-control" type="text" value="Sneat" id="html5-text-input" formControlName="specialite"  [ngClass]="{ 'is-invalid': submitted && f['specialite'].errors }" />
+        </div>
+      </div>
+      <div *ngIf="submitted && f['specialite'].errors" class="invalid-feedback">
+        <div *ngIf="f['specialite'].errors['required']">Entrer la specialite</div>
+      </div>
+      <div class="mb-3 row">
+        <label for="html5-text-input" class="col-md-2 col-form-label">encadrant</label>
+        <div class="col-md-10">
+          <input class="form-control" type="text" value="Sneat" id="html5-text-input" formControlName="encadrant" [ngClass]="{ 'is-invalid': submitted && f['specialite'].errors }" />
+        </div>
+      </div>
+      <div *ngIf="submitted && f['encadrant'].errors" class="invalid-feedback">
+        <div *ngIf="f['encadrant'].errors['required']">Entrer le nom de l'encadrant</div>
+      </div>
+      <div class="mb-1 row">
+        <label for="html5-date-input" class="col-md-2 col-form-label">datePfe</label>
+        <div class="col-md-10">
+          <input class="form-control" type="date" value="2021-06-18" id="html5-date-input" formControlName="datePfe" [ngClass]="{ 'is-invalid': submitted && f['specialite'].errors }" />
+        </div>
+      </div>
+      <div *ngIf="submitted && f['datePfe'].errors" class="invalid-feedback">
+        <div *ngIf="f['datePfe'].errors['required']">Entrer la date de pfe</div>
+      </div>
+    </div>
+    <div class="col-md-5 offset-md-2 tex">
+        <button type="submit" class="btn btn-primary">Enregistrer</button>
+    </div>
+  </form>
+</div>
+  
