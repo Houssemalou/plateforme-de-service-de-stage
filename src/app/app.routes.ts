@@ -8,9 +8,8 @@ import { EtudiantComponent } from './étudiant/etudiant/etudiant.component';
 
 export const routes: Routes = [
     {path:'',component : EtudiantComponent},
-    {path:'calendrier',component : DeroulementComponent},
+    {path:'calendar',component : DeroulementComponent},
     {path:'taches',component:TacheComponent},
     {path:'kanban-bord',component : KanbanBordComponent}, 
-    {path:'upload-report',component : TelechargementRapportComponent}
-    
+    {path:'upload-report',component : TelechargementRapportComponent} 
 ];
