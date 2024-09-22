@@ -13,14 +13,15 @@ import { TacheComponent } from './étudiant/tache/tache.component';
 import { KanbanBordComponent } from './étudiant/kanban-bord/kanban-bord.component';
 import { TelechargementRapportComponent } from './étudiant/telechargement-rapport/telechargement-rapport.component';
 import { MessagerieComponent } from './administration/messagerie/messagerie.component';
+import { FooterComponent } from "./\u00E9tudiant/footer/footer.component";
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  providers:[HttpClientModule],
-  imports: [CommonModule,RouterLink,MessagerieComponent, RouterOutlet,TelechargementRapportComponent, EtudiantComponent, AdminComponent, AuthentificationComponent, TableComponent, OffreDeStageComponent, LesStagesComponent, DeroulementComponent, TacheComponent, KanbanBordComponent ],
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+    selector: 'app-root',
+    standalone: true,
+    providers: [HttpClientModule],
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css'],
+    imports: [CommonModule, RouterLink, MessagerieComponent, RouterOutlet, TelechargementRapportComponent, EtudiantComponent, AdminComponent, AuthentificationComponent, TableComponent, OffreDeStageComponent, LesStagesComponent, DeroulementComponent, TacheComponent, KanbanBordComponent, FooterComponent]
 })
 export class AppComponent {
   status = false;

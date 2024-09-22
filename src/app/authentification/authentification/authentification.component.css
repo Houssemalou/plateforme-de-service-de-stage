@@ -1,3 +1,8 @@
+.container-fluid{
+  display: column;
+  align-items: center;
+  justify-content: center;
+}
 .login {
     min-height: 100vh;
   }
