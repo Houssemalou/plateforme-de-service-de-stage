@@ -17,4 +17,10 @@ export class EtudiantComponent {
   {
     this.status = !this.status;       
   }
+
+  activeLink : string = '';
+  
+  setActiveLink(link : string){
+    this.activeLink = link;
+  }
 }
